@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="nightcrew-app">
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/place.css">
+    <link rel="stylesheet" type="text/css" href="css/request.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/mui.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/env.js"></script>
+    <script type="text/javascript" src="js/api-service.js"></script>
+    <script type="text/javascript" src="js/helper-service.js"></script>
+    <script type="text/javascript" src="js/request-guestlist.js"></script>
+    <title>Nightcrew</title>
+</head>
+<body>
+<!-- Place Controller -->
+<div ng-controller="GuestlistController" class="content">
+
+    <!-- TOP BAR -->
+    <div class="top-container">
+        <!-- Spacer for top signal bar -->
+        <div class="top-bar-spacer">&nbsp;</div>
+        <!-- Top Nav Bar -->
+        <div class="top-bar">
+            <div class="left-btn" ng-click="goBack()">&nbsp;<i class="fa fa-chevron-left" aria-hidden="true"></i> Back</div>
+            <div class="middle-bar"><strong>Request Guestlist</strong></div>
+            <div class="right-btn">&nbsp;</div>
+        </div>
+        <!--/ Top Nav Bar -->
+    </div>
+    <!--/ END OF TOP BAR -->
+
+    <!-- BODY -->
+    <div id="place-body-container">
+        <h1>{{title}}</h1>
+        <div class="mui-textfield"><input type="date" id="input" /></div>
+        <div><a class="mui-btn mui-btn--large mui-btn--primary main-btn" href="#" id="button">Next</a></div>
+    </div>
+    <!--/ END OF BODY -->
+
+</div>
+<!--/ END of Place Controller -->
+</body>
+</html>

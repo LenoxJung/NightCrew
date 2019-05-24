@@ -1,0 +1,43 @@
+#place-body-container{
+    margin-top: 70px;
+}
+
+#place-img{
+    height: 200px;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: #cccccc;
+}
+
+#address-container{
+    background: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    font-size: 24px;
+    line-height: 200px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.place-page-btn{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1em;
+    border-radius: 0 !important;
+}
+
+.place-page-btn .icon{
+    float: left;
+    font-size: 2em;
+}
+
+.footer{
+    line-height: 60px !important;
+    height: 60px !important;
+}
+
+#friendsCheckedIn h3{
+    padding-left: 5px;
+    border-bottom: 1px solid #cccccc;
+    margin-top: 25px;
+}

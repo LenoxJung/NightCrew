@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="nightcrew-app">
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/mui.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/env.js"></script>
+    <script type="text/javascript" src="js/api-service.js"></script>
+    <script type="text/javascript" src="js/helper-service.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <title>Nightcrew</title>
+</head>
+<body ng-controller="NavigationController">
+
+<div class="content">
+
+    <!-- PLAN PANE -->
+    <div class="mui-tabs__pane mui--is-active" id="invite-pane">
+        <!-- PlanCtrl -->
+        <div id="invite-content">
+                <div><button ng-click="" class="mui-btn mui-btn--primary main-btn"><span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span> Invite Friends</button></div>
+                <div><button ng-click="activateVenuesTab()" class="mui-btn mui-btn--primary main-btn"><span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> Explore Venues</button></div>
+                <div><button ng-click="activateVenuesTab()" class="mui-btn mui-btn--primary main-btn"><span class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i></span> Check-In</button></div>
+        </div>
+    </div>
+    <!--/ END OF PLAN PANE -->
+
+    <!-- VENUES PANE (Places Controller) -->
+    <div ng-controller="PlacesController" class="mui-tabs__pane" id="venues-pane">
+        <!-- TOP BAR -->
+        <div class="top-container">
+            <!-- Spacer for top signal bar -->
+            <div class="top-bar-spacer">&nbsp;</div>
+            <!-- Top Nav Bar -->
+            <div class="top-bar">
+                <div class="left-btn">&nbsp;</div>
+                <div class="middle-bar">
+                    <input ng-model="search_query" type="text" id="search-bar" placeholder="&#xf002;" autocorrect="off" autocomplete="off" autocapitalize="off">
+                </div>
+                <div class="right-btn">&nbsp;</div>
+            </div>
+            <!--/ Top Nav Bar -->
+        </div>
+        <!--/ END OF TOP BAR -->
+        <!-- Places Container -->
+        <div id="places-container" class="space-top">
+            <div ng-repeat="place in places | filter:search_query">
+                <span class="anchor" id="place-{{place.id}}"></span>
+                <div class="place-box">
+                    <a ng-click="navigateToPlaceByID(place.id)">
+                        <div class="img_holder" style="background-image: url({{ place.picture }});">
+                            <p>{{ place.name }}</p>
+                            <div class="tags">
+                                <span ng-show="place.guestlist" class="guestlist">Guestlist</span>
+                                <span ng-show="place.vip" class="vip">VIP</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="bottom-box">
+                        <div class="left">
+                            <button id="{{place.id}}" ng-click="checkInButton(place.id, place.name)" class="mui-btn mui-btn--danger"><i class="fa fa-map-marker" aria-hidden="true"></i> Check-in</button>
+                        </div>
+                        <div class="right">
+                            <span><a ng-click="viewCheckedinFriends(place.id)"><i class="fa fa-user" aria-hidden="true"></i> <span class="{{place.id}}">No friends checked in</span></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">Made in Vancouver &hearts;</div>
+        </div>
+
+    </div>
+    <!--/ END OF VENUES PANE -->
+
+    <!-- PROFILE PANE -->
+    <div ng-controller="ProfileController" class="mui-tabs__pane" id="profile-pane">
+        <div class="top-container">
+            <!-- Spacer for top signal bar -->
+            <div class="top-bar-spacer">&nbsp;</div>
+        </div>
+        <div class="content">
+            <h2>{{phone}}</h2>
+            <p>DOB: {{dob}}</p>
+        </div>
+    </div>
+    <!--/ END OF PROFILE PANE -->
+
+</div>
+
+<!-- TABS -->
+<div id="tab-bar">
+    <ul class="mui-tabs__bar mui-tabs__bar--justified">
+        <li id="invite-tab" class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="invite-pane"><i class="fa fa-calendar" aria-hidden="true"></i> Plan</a></li>
+        <li id="venues-tab"><a data-mui-toggle="tab" data-mui-controls="venues-pane"><i class="fa fa-map-marker" aria-hidden="true"></i> Venues</a></li>
+        <li id="profile-tab"><a data-mui-toggle="tab" data-mui-controls="profile-pane"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+    </ul>
+</div>
+<!--/ END OF TABS -->
+
+</body>
+</html>

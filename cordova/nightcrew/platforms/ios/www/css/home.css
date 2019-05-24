@@ -1,0 +1,208 @@
+/*
+
+    home.css
+
+*/
+
+.space-top{
+    margin-top: 80px;
+}
+
+.top-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.top-bar-spacer{
+    background: #004358;
+    height: 20px;
+}
+
+.top-bar{
+    height: 50px;
+    width: 100%;
+    background: #004358;
+    color: #FAFAFA;
+    line-height: 50px;
+}
+
+.left-btn{
+    float: left;
+    width: 25%;
+    font-size: 16px;
+}
+
+.left-btn:hover{
+    color: #777777;
+}
+
+.right-btn{
+    float: left;
+    width: 25%;
+    text-align: right;
+    font-size: 16px;
+}
+
+.right-btn:hover{
+    color: #777777;
+}
+
+.middle-bar{
+    float: left;
+    line-height: 50px;
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+}
+
+#search-bar {
+    line-height: 30px;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    background: #003242;
+    color: #FAFAFA;
+    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", FontAwesome, sans-serif;
+}
+
+.content{
+    top:0;
+}
+
+#tab-bar{
+    position: fixed;
+    bottom: 0;
+    background: #FFFFFF;
+}
+
+.mui-tabs__bar>li>a {
+    font-size: 12px;
+}
+
+.place-box{
+    background: #FFFFFF;
+    margin-top: 25px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;
+}
+
+.place-box .img_holder{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+
+.place-box .img_holder p{
+    color: #FAFAFA;
+    font-size: 2em;
+    font-weight: 100;
+    background: rgba(0,0,0,0.6);
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.place-box .img_holder .tags{
+    position: relative;
+    bottom: -90px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.place-box .img_holder .tags span{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.guestlist{
+    background: rgba(245, 0, 87, 0.8);
+}
+
+.vip{
+    background: rgba(106, 27, 154, 0.8);
+}
+
+.place-box .bottom-box{
+    height: 50px;
+    line-height: 50px;
+}
+
+.bottom-box .left{
+    float: left;
+    width: 50%;
+}
+
+.bottom-box .right{
+    text-align: right;
+    float: right;
+    width: 50%;
+    padding-right: 10px;
+}
+
+.footer{
+    line-height: 60px;
+    height: 110px;
+    font-size: 12px;
+    text-align: center;
+    color:#9e9e9e;
+}
+
+.left button{
+    margin-left: 5px;
+}
+
+#invite-pane{
+    min-height: 100vh;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    background: url("../img/app/login_bg.png") no-repeat;
+    background-size: cover;
+}
+
+.main-btn{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1em;
+    border-radius: 0 !important;
+}
+
+.icon{
+    font-size: 2em;
+    float: left;
+}
+
+#invite-content{
+    height: 100vh;
+    display:table-cell;
+    vertical-align:middle;
+    width: 100vw;
+}
+
+#profile-pane .content{
+    position: relative;
+    top: 20px;
+}
+
+#profile-pane .content h2{
+    text-align: center;
+}
+
+#profile-pane .content p{
+    text-align: center;
+}
+
+.anchor{
+    display:block;
+    height:70px; /* this is the height of your header */
+    margin-top:-70px; /* this is again negative value of the height of your header */
+    visibility:hidden;
+}

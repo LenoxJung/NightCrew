@@ -1,0 +1,45 @@
+.login-btn{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1em;
+    border-radius: 0 !important;
+}
+
+.fb-icon{
+    font-size: 2em;
+    float: left;
+    padding-right: 25px;
+    border-right: solid #000000 1px;
+}
+
+body{
+    line-height: 100vh;
+    height: 100vh;
+}
+
+.main{
+    background: url("../img/app/login_bg.png") no-repeat;
+    background-size: cover;
+}
+
+.title{
+    position: absolute;
+    top: 50px;
+    font-size: 28px;
+    line-height: 28px;
+    color: #FAFAFA;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+}
+
+.footer{
+    line-height: 16px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 25px;
+    color: #FAFAFA;
+    width: 100%;
+    text-align: center;
+}

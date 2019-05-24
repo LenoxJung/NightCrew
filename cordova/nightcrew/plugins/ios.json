@@ -1,0 +1,42 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "217708248601647",
+            "APP_NAME": "nightcrew",
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "io.nightcrew.nightcrew"
+        }
+    }
+}

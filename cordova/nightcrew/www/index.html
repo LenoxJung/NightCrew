@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="nightcrew-app">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/mui.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/env.js"></script>
+        <script type="text/javascript" src="js/api-service.js"></script>
+        <script type="text/javascript" src="js/helper-service.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Nightcrew</title>
+    </head>
+    <body>
+        <div class="title">nightcrew</div>
+        <div ng-controller="LoginController as LoginCtrl">
+            <div class="main">
+                <a ng-click="loginButtonClicked()" class="mui-btn mui-btn--large mui-btn--primary login-btn"><span class="fb-icon"><i class="fa fa-facebook-official" aria-hidden="true"></i></span>Login with Facebook</a>
+            </div>
+        </div>
+        <div class="footer">nightcrew.io</div>
+    </body>
+</html>

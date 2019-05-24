@@ -1,0 +1,31 @@
+html{
+    background: url("../img/app/login_bg.png") no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+body{
+    background: none !important;
+}
+
+h1{
+    text-align: center;
+    padding-top: 50px;
+    color: #FAFAFA;
+}
+
+input{
+    text-align: center;
+    color: #FAFAFA !important;
+    border-bottom-color: #FAFAFA !important;
+}
+
+.main-btn{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1em;
+    border-radius: 0 !important;
+}
+
+
